@@ -1,6 +1,4 @@
-#Workflow for GitHub Actions
-
-name: sca-auth-workflow
+ name: sca-auth-workflow
   
 on:
   
