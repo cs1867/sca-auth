@@ -34,7 +34,7 @@ jobs:
              github-token: ${{ secrets.GIT_ACTIONS }}
           run: |
             git clone https://github.com/cs1867/project.git project
-            cp project/toolbox/workflows/github-workflow.sh .    
+            cp project/toolbox/workflows/github-workflow-skip-install.sh .    
         
         - name: Pretty-print BUILD_VARS_JSON
           run: |
@@ -67,7 +67,7 @@ jobs:
 
         - name: run docker oneshot builder
           run: |
-           curl -s https://raw.githubusercontent.com/perfsonar/docker-oneshot-builder/main/build | sh -s - --run github-workflow.sh . '${{ github.event.inputs.OS }}'  
+           curl -s https://raw.githubusercontent.com/perfsonar/docker-oneshot-builder/main/build | sh -s - --run github-workflow-skip-install.sh . '${{ github.event.inputs.OS }}'  
         
         - uses: actions/upload-artifact@v3
           with:
