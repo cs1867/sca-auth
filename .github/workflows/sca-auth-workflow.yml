@@ -3,7 +3,7 @@ name: sca-auth-workflow
 on:
 
   workflow_dispatch:
-    inputs:
+    inputs: 
       BUILD_BRANCH:
         description: 'Branch to build'
         required: true
