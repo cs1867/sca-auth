@@ -136,12 +136,6 @@ jobs:
             echo "**** next next ****"
             echo "BUILD_VARS_JSON=$BUILD_VARS_JSON"
 
-        - uses: actions/upload-artifact@v4
-          with:
-            name: ${{ github.event.repository.name }}-${{ env.BUILD_OS  }}
-            path: unibuild-repo
-            retention-days: 5
-
         - name: Add GitHub run ID to buildids
           id: add_run_id
           run: |
